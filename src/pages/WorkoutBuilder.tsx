@@ -294,7 +294,7 @@ export const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onComplete, onBa
         <ProgressBar currentStep={currentStep} totalSteps={totalSteps} />
       </div>
 
-      <div className="p-6 pb-24 animate-fade-up">
+      <div className="p-6 pb-24 animate-fade-up pt-10">
         <div className="max-w-md mx-auto">
           {renderStep()}
         </div>

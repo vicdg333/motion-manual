@@ -38,10 +38,6 @@ export const Home: React.FC<HomeProps> = ({ onStart }) => {
           </Button>
         </div>
         
-        {/* Subtitle */}
-        <p className="text-sm text-gray-text mt-8">
-          Yes, you can choose everything. No, it’s not that deep.
-        </p>
       </div>
     </div>
   );
