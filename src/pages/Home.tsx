@@ -8,11 +8,11 @@ interface HomeProps {
 
 export const Home: React.FC<HomeProps> = ({ onStart }) => {
   return (
-    <div className="min-h-screen bg-background flex flex-col items-center justify-center p-6">
-      <div className="text-center space-y-8 max-w-sm mx-auto animate-fade-up">
+    <div className="min-h-screen flex flex-col items-center justify-center p-6" style={{ background: '#FCF8F5' }}>
+      <div className="text-center max-w-none mx-auto animate-fade-up">
         {/* App Logo/Icon */}
-        <div className="mx-auto flex items-center justify-center">
-          <img src="/icon.png" alt="App icon" className="w-64 h-64 object-contain" />
+        <div className="mx-auto flex items-center justify-center mb-12">
+          <img src="/icon.png" alt="App icon" className="w-60 h-60 sm:w-80 sm:h-80 md:w-[18rem] md:h-[18rem] lg:w-[20rem] lg:h-[20rem] object-contain" />
         </div>
         
         {/* App Name & Tagline */}
@@ -32,9 +32,9 @@ export const Home: React.FC<HomeProps> = ({ onStart }) => {
             variant="selected"
             size="lg"
             onClick={onStart}
-            className="w-full group rounded-xl px-4 !font-normal"
+            className="w-full group rounded-lg px-4"
           >
-            Create new routine
+            <span className="text-base font-normal text-white">Create new routine</span>
           </Button>
         </div>
         

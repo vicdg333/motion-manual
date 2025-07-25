@@ -90,7 +90,7 @@ export const WorkoutResults: React.FC<WorkoutResultsProps> = ({ workoutData, onH
       {/* Header */}
       <div className="sticky top-0 bg-background border-b border-gray-border p-4 z-10">
         <div className="max-w-md mx-auto">
-          <h1 className="text-xl font-semibold text-center">Built just for you</h1>
+          <h1 className="text-xl font-semibold text-center">Built just for you  😊</h1>
           <p className="text-sm text-gray-text text-center mt-1">
             {workoutData.daysPerWeek} days/week • {workoutData.fitnessLevel} • {workoutData.location}
           </p>

@@ -93,9 +93,12 @@ export const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onComplete, onBa
     switch (currentStep) {
       case 1:
         return (
-          <div className="space-y-14 flex flex-col items-center text-center w-full">
-            <div className="space-y-4 w-full">
-              <h2 className="text-xl font-semibold w-full">What's your fitness level?</h2>
+          <div className="space-y-12 flex flex-col items-center text-center w-full">
+            <div className="w-full">
+              <div className="flex flex-col items-center">
+                <span className="text-3xl mb-6">👋</span>
+                <h2 className="text-xl font-semibold w-full mb-4">What's your fitness level?</h2>
+              </div>
               <SingleSelect
                 options={['Beginner', 'Intermediate', 'Advanced']}
                 selected={workoutData.fitnessLevel}
@@ -114,8 +117,8 @@ export const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onComplete, onBa
               />
             </div>
 
-            <div className="space-y-4 w-full flex flex-col items-center text-center">
-              <h2 className="text-xl font-semibold w-full">How many workouts per week?</h2>
+            <div className="space-y-8 w-full flex flex-col items-center text-center">
+              <h2 className="text-xl font-semibold w-full">How many strenght workouts per week?</h2>
               <div className="flex justify-center w-full">
                 <NumberPicker
                   value={workoutData.daysPerWeek}
@@ -127,14 +130,15 @@ export const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onComplete, onBa
               </div>
             </div>
 
-            <div className="space-y-4 w-full">
-              <h2 className="text-xl font-semibold w-full">What's your main fitness goal?</h2>
+            <div className="w-full">
+              <h2 className="text-xl font-semibold w-full mb-2">What's your main fitness goal?</h2>
+              <p className="text-sm text-gray-text w-full mb-6">I know you want everything, but pick the top 1.</p>
               <SingleSelect
                 options={[
                   'Build muscle',
                   'Lose fat',
                   'Maintain general fitness',
-                  'Improve endurance and performance'
+                  'Improve endurance', 
                 ]}
                 selected={workoutData.mainGoal}
                 onChange={(value) => setWorkoutData({ ...workoutData, mainGoal: value })}
@@ -145,7 +149,10 @@ export const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onComplete, onBa
         );
       case 2:
         return (
-          <div className="space-y-6 flex flex-col items-center text-center w-full">
+          <div className="space-y-5 flex flex-col items-center text-center w-full">
+            <div className="flex flex-col items-center">
+              <span className="text-3xl mb-1">🗓️</span>
+            </div>
             <h2 className="text-xl font-semibold w-full">What kind of split do you prefer?</h2>
             <SingleSelect
               options={[
@@ -163,10 +170,13 @@ export const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onComplete, onBa
         );
       case 3:
         return (
-          <div className="space-y-8 flex flex-col items-center text-center w-full">
-            <div className="space-y-4 w-full">
-              <h2 className="text-xl font-semibold w-full">Which lower body areas would you like to focus on?</h2>
-              <p className="text-sm text-gray-text w-full">Select all that apply</p>
+          <div className="space-y-14 flex flex-col items-center text-center w-full">
+            <div className="w-full">
+              <div className="flex flex-col items-center">
+                <span className="text-3xl mb-5">🍑</span>
+              </div>
+              <h2 className="text-xl font-semibold w-full mb-2">Which lower body areas would you like to focus on?</h2>
+              <p className="text-sm text-gray-text w-full mb-6">Select all that apply</p>
               <MultiSelect
                 options={['No preference', 'Glutes', 'Hamstrings', 'Quads', 'Calves']}
                 selected={workoutData.lowerBodyFocus}
@@ -175,9 +185,9 @@ export const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onComplete, onBa
               />
             </div>
 
-            <div className="space-y-4 w-full">
-              <h2 className="text-xl font-semibold w-full">Any areas you don't want to focus on?</h2>
-              <p className="text-sm text-gray-text w-full">Select all that apply</p>
+            <div className="w-full">
+              <h2 className="text-xl font-semibold w-full mb-2">Any areas you don't want to focus on?</h2>
+              <p className="text-sm text-gray-text w-full mb-6">Select all that apply</p>
               <MultiSelect
                 options={['Glutes', 'Hamstrings', 'Quads', 'Calves', 'None']}
                 selected={workoutData.lowerBodyAvoid}
@@ -189,10 +199,13 @@ export const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onComplete, onBa
         );
       case 4:
         return (
-          <div className="space-y-8 flex flex-col items-center text-center w-full">
-            <div className="space-y-4 w-full flex flex-col items-center text-center">
-              <h2 className="text-xl font-semibold w-full">Which upper body areas would you like to focus on?</h2>
-              <p className="text-sm text-gray-text w-full">Select all that apply</p>
+          <div className="space-y-14 flex flex-col items-center text-center w-full">
+            <div className="w-full flex flex-col items-center text-center">
+              <div className="flex flex-col items-center">
+                <span className="text-3xl mb-5">💪</span>
+              </div>
+              <h2 className="text-xl font-semibold w-full mb-2">Which upper body areas would you like to focus on?</h2>
+              <p className="text-sm text-gray-text w-full mb-6">Select all that apply</p>
               <MultiSelect
                 options={['No preference', 'Back', 'Shoulders', 'Triceps', 'Chest', 'Biceps']}
                 selected={workoutData.upperBodyFocus}
@@ -201,9 +214,9 @@ export const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onComplete, onBa
               />
             </div>
 
-            <div className="space-y-4 w-full flex flex-col items-center text-center">
-              <h2 className="text-xl font-semibold w-full">Any areas you don't want to focus on?</h2>
-              <p className="text-sm text-gray-text w-full">Select all that apply</p>
+            <div className="w-full flex flex-col items-center text-center">
+              <h2 className="text-xl font-semibold w-full mb-2">Any areas you don't want to focus on?</h2>
+              <p className="text-sm text-gray-text w-full mb-6">Select all that apply</p>
               <MultiSelect
                 options={['Back', 'Shoulders', 'Triceps', 'Chest', 'Biceps', 'None']}
                 selected={workoutData.upperBodyAvoid}
@@ -217,6 +230,9 @@ export const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onComplete, onBa
         return (
           <div className="space-y-6 flex flex-col items-center text-center w-full">
             <div className="space-y-4 w-full flex flex-col items-center text-center">
+              <div className="flex flex-col items-center">
+                <span className="text-4xl mb-1">🧘‍♀️</span>
+              </div>
               <h2 className="text-xl font-semibold w-full">Would you like to include ab exercises?</h2>
               <SingleSelect
                 options={['Yes', 'No']}
@@ -242,8 +258,11 @@ export const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onComplete, onBa
       case 6:
         return (
           <div className="space-y-6 flex flex-col items-center text-center w-full">
+            <div className="flex flex-col items-center">
+              <span className="text-4xl mb-1">🏋️‍♀️</span>
+            </div>
             <h2 className="text-xl font-semibold w-full">How many exercises per set?</h2>
-            <div className="space-y-6 w-full flex flex-col items-center text-center">
+            <div className="space-y-10 w-full flex flex-col items-center text-center">
               <NumberPicker
                 label={<span className="font-light">Upper body days</span>}
                 value={workoutData.upperBodyExercises}
@@ -273,7 +292,7 @@ export const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onComplete, onBa
       case 7:
         return (
           <div className="space-y-6">
-            <h2 className="text-xl font-semibold">Any extra notes?</h2>
+            <h2 className="text-xl font-semibold">💌 Any extra notes?</h2>
             <p className="text-sm text-gray-text">Time to mention any injuries, equipment loves (or hates), non-negotiables, etc.</p>
             <Textarea
               placeholder={'e.g., “I have a knee injury”, “I want huge glutes”, or “don’t ever mention the word ‘burpees’”'}
@@ -294,7 +313,7 @@ export const WorkoutBuilder: React.FC<WorkoutBuilderProps> = ({ onComplete, onBa
         <ProgressBar currentStep={currentStep} totalSteps={totalSteps} />
       </div>
 
-      <div className="p-6 pb-24 animate-fade-up pt-10">
+      <div className="p-6 pb-32 animate-fade-up pt-10">
         <div className="max-w-md mx-auto">
           {renderStep()}
         </div>
